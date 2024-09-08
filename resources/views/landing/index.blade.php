@@ -233,7 +233,7 @@
             @endforeach
           <!-- END SINGLE WORK DESIGN AREA -->
           <!-- START SINGLE WORK DESIGN AREA -->
-          <div class="col-md-4 col-sm-6 mix">
+          <div class="col-md-4 col-sm-6 mix 1 2 3 4 5">
             <div class="item">
               <a href="{{ asset('cavoni') }}/assets/images/work/work.png" class="work-popup">
                 <figure class="effect-bubba">

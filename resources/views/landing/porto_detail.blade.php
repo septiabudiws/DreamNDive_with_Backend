@@ -87,7 +87,6 @@
   </div>
   <!--/.popup-search-box-->
 
-  <div id="searchbox-overlay"></div>
   <!--/.searchbox-overlay-->
 
   <section class="single-page no-sidebar padding-bottom">
@@ -96,12 +95,12 @@
         <div class="col-lg-8 offset-lg-2">
           <div class="cover">
             <div class="single-post-thumb">
-              <img src="{{ asset('foto_ckeditor') }}/12066113_4833725.jpg" alt="thumb">
+              <img src="{{ asset('thumbnail/' . $portofolio->foto) }}" alt="thumb">
             </div>
           </div>
           <header class="entry-header">
             <ul class="post-meta-vixto">
-              <li><a class="date fs-5 text-black" href="{{ url('/#work') }}">{{ $portofolio->kategori->nama_kategori }}</a></li>
+              <li><a class="date fs-5 text-black" href="{{ url('/') }}#work">{{ $portofolio->kategori->nama_kategori }}</a></li>
               <li class="sep"></li>
               <li><a href="category.html" class="date">{{ \Carbon\Carbon::parse($portofolio->tanggal)->translatedFormat('d F Y') }}</a></li>
             </ul>

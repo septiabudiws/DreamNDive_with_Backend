@@ -34,7 +34,7 @@
             <label for="file-upload" class="file-upload mb-0">
               <span class="d-inline-block wh-110 bg-body-bg rounded-10 position-relative">
                 <img id="upload" class="uploaded-image" src="{{ asset('admin') }}/assets/img/upload.png"
-                  alt="your image" />
+                  alt="your image"/>
               </span>
             </label>
             <input id="file-upload" name="foto_project" onchange="readURL(this);" type="file" hidden>
