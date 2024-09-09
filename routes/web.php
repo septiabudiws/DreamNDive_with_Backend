@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PortoController;
@@ -22,6 +23,14 @@ Route::get('/detail/{token}', [LandingController::class, 'detail']);
 
 Route::get('/', [LandingController::class, 'index']);
 
+// LOGIN
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', [AuthController::class, 'index'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+});
+
+Route::middleware(['auth'])->group (function(){
+
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::post('/kategori/tambah', [KategoriController::class, 'tambah_action'])->name('tambah_action');
 Route::post('/kategori/edit/{id}', [KategoriController::class, 'edit_action'])->name('edit_action');
@@ -36,3 +45,6 @@ Route::post('/upload', [PortoController::class, 'upload'])->name('ckeditor.uploa
 Route::get('/portofolio/hapus/{id}', [PortoController::class, 'hapus']);
 Route::get('/portofolio/edit/{id}', [PortoController::class, 'edit']);
 Route::post('/portofolio/edit/{id}', [PortoController::class, 'edit_action'])->name('edit_porto');
+
+Route::get('/logout', [AuthController::class, 'logout']);
+});
