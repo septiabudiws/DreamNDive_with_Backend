@@ -32,19 +32,10 @@
           <!-- START ABOUT TEXT AREA -->
           <div class="about-text">
             <h2 class="wow fadeInDown" data-wow-delay="0.4s">
-              semua tentang kami!
+              {{ $about->title }}
             </h2>
             <p class="wow fadeInDown" data-wow-delay="0.6s">
-              Kami, yang terlibat dalam layanan freelance pembuatan poster dan
-              editing video, menghadirkan kreativitas kami dengan sepenuh
-              hati. Dengan keahlian desain grafis dan editing video yang kami
-              miliki, kami menciptakan karya yang menarik dan berkualitas
-              tinggi. Kemampuan multitasking dan pemahaman mendalam kami
-              tentang visual storytelling memungkinkan kami memberikan solusi
-              desain yang unik dan sesuai dengan kebutuhan klien kami. Melalui
-              pengalaman freelance ini, kami belajar mengelola waktu dan
-              proyek secara mandiri, mengasah kemampuan komunikasi kami, serta
-              membangun portofolio yang kuat untuk masa depan kami.
+              {!! $about->deskripsi !!}
             </p>
           </div>
           <!-- / END ABOUT TEXT AREA -->
@@ -58,56 +49,18 @@
   <section class="service-area section-padding">
     <div class="container">
       <div class="row">
+        @foreach ($service as $get)
         <!-- START SINGLE SERVICE DESIGN AREA -->
         <div class="col-md-3 col-sm-6">
-          <div class="single-service wow fadeInUp" data-wow-delay="0.2s">
-            <i class="bx bx-image-alt"></i>
-            <h2>Jasa Poster</h2>
-            <p>
-              Layanan jasa membuat poster UMKM, Event, Assessment, dan sesuai
-              keinginan.
-            </p>
-          </div>
+            <div class="single-service wow fadeInUp" data-wow-delay="0.2s">
+                <i class="bx {{ $get->icon }}"></i>
+                <h2>{{ $get->title }}</h2>
+                <p>
+                    {!! $get->deskripsi !!}
+                </p>
+            </div>
         </div>
-        <!-- / END SINGLE SERVICE DESIGN AREA -->
-        <!-- START SINGLE SERVICE DESIGN AREA -->
-        <div class="col-md-3 col-sm-6">
-          <div class="single-service wow fadeInUp" data-wow-delay="0.4s">
-            <i class="bx bx-video"></i>
-            <h2>Content Video</h2>
-            <p>
-              kalian ingin menjadi content creator atau ada tugas video dari
-              sekolah? tapi gatau cara ngedit yang keren? Pakai jasa kita aja.
-              Hanya mengirimkan video, maka video kalian akan kami edit
-              sekeren mungkin.
-            </p>
-          </div>
-        </div>
-        <!-- / END SINGLE SERVICE DESIGN AREA -->
-        <!-- START SINGLE SERVICE DESIGN AREA -->
-        <div class="col-md-3 col-sm-6">
-          <div class="single-service wow fadeInUp" data-wow-delay="0.6s">
-            <i class="bx bxs-user-detail"></i>
-            <h2>Portofolio Pribadi</h2>
-            <p>
-              Kami juga membuka jasa membuat portofolio probadi berbasis
-              website, lengkap dengan hosting di dalamnya.
-            </p>
-          </div>
-        </div>
-        <!-- / END SINGLE SERVICE DESIGN AREA -->
-        <!-- START SINGLE SERVICE DESIGN AREA -->
-        <div class="col-md-3 col-sm-6">
-          <div class="single-service wow fadeInUp" data-wow-delay="0.6s">
-            <i class='bx bxs-t-shirt'></i>
-            <h2>T-Shirt Design</h2>
-            <p>
-              Jika kalian ingin membuat design t-shirt dan ingin menggunakan design anda sendiri langsung hubungi kami
-              untuk menggunakan jasa pembuatan design kaos, jaket, PDL/PDH, dan lain-lain.
-            </p>
-          </div>
-        </div>
-        <!-- / END SINGLE SERVICE DESIGN AREA -->
+        @endforeach
       </div>
     </div>
   </section>

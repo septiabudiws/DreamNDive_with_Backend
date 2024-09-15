@@ -131,6 +131,12 @@
             </a>
           </li>
           <li class="menu-item">
+            <a href="/adjustment" class="menu-link">
+              <i class="menu-icon tf-icons ri-dashboard-line"></i>
+              <div data-i18n="Adjustment">Adjustment</div>
+            </a>
+          </li>
+          <li class="menu-item">
             <a href="/kategori" class="menu-link">
               <i class="menu-icon tf-icons ri-archive-drawer-line"></i>
               <div data-i18n="Kategori">Kategori</div>

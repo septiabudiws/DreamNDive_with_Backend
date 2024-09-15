@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdjustmentController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PortoController;
@@ -31,12 +33,18 @@ Route::middleware(['guest'])->group(function () {
 
 Route::middleware(['auth'])->group (function(){
 
+Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/adjustment', [AdjustmentController::class, 'index']);
+Route::get('/about/edit/{id}', [AdjustmentController::class, 'about_edit']);
+Route::post('/about/edit/{id}', [AdjustmentController::class, 'about_edit_action'])->name('about_edit');
+Route::get('/service/edit/{id}', [AdjustmentController::class, 'service_edit']);
+Route::post('/service/edit/{id}', [AdjustmentController::class, 'service_edit_action'])->name('service_edit');
+
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::post('/kategori/tambah', [KategoriController::class, 'tambah_action'])->name('tambah_action');
 Route::post('/kategori/edit/{id}', [KategoriController::class, 'edit_action'])->name('edit_action');
 Route::get('/kategori/hapus/{id}', [KategoriController::class, 'hapus']);
-
-
 
 Route::get('/portofolio', [PortoController::class, 'index']);
 Route::get('/portofolio/tambah', [PortoController::class, 'tambah']);
