@@ -16,8 +16,8 @@ class UserSedeer extends Seeder
         $dataUsers = [
             [
                 'name' => 'Dinda Ayu Safitri',
-                'email' => 'dream@gmail.com',
-                'password' => bcrypt('123'),
+                'email' => 'anddived@gmail.com',
+                'password' => bcrypt('terserahkamusayang'),
             ]
 
         ];
